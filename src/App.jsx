@@ -6,8 +6,8 @@ function App() {
   return (
     <>
       {/* <Grid /> */}
-      {/* <MainItem /> */}
-      <Testing />
+      <MainItem />
+      {/* <Testing /> */}
     </>
   );
 }

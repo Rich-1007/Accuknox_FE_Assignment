@@ -21,7 +21,7 @@ const buttons = [
   {
     hasInput: true,
     type: "text" ,
-    btnText: "change Color"
+    btnText: "Change color"
   }
 ];
 
