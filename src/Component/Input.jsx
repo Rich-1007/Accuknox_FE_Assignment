@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 export const ColorInput = ({ handler, data, button }) => {
-  const [color, setColor] = useState("black");
+  const [color, setColor] = useState("");
   return (
     // <input value={color} onChange={(e) => setColor(e.target.value)} />
     <div className="flex flex-col items-center ">
@@ -14,16 +14,20 @@ export const ColorInput = ({ handler, data, button }) => {
 
       <button
         className="bg-green-600  rounded-md px-3 py-1"
-        onClick={() => handler(button.btnText, data.id, color)}
-      >
+        onClick={() => {handler(button.btnText, data.id, color)
+             setColor("") } }
+        >
+          
         {button.btnText}
       </button>
+
+
     </div>
   );
 };
 
 export const TextInput = ({ handler, data, button }) => {
-  const [fontSize, setFontSize] = useState(16);
+  const [fontSize, setFontSize] = useState();
   return (
     <div className="flex flex-col items-center ">
       <input
@@ -35,7 +39,8 @@ export const TextInput = ({ handler, data, button }) => {
 
       <button
         className="bg-green-600  rounded-md px-3 py-1"
-        onClick={() => handler(button.btnText, data.id, fontSize)}
+        onClick={() =>{ handler(button.btnText, data.id, fontSize)
+        setFontSize("")}}
       >
         {button.btnText}
       </button>
