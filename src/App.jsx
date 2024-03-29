@@ -3,9 +3,7 @@ import MainItem from "./Component/MainItem";
 function App() {
   return (
     <>
-
       <MainItem />
-    
     </>
   );
 }

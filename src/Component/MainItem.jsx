@@ -76,7 +76,65 @@ const MainItem = () => {
 
   return (
     <div className=" ">
-      
+      <h1 className="text-center pt-4 text-3xl"> Assignment </h1>
+
+      <div className=" p-3 sm:p-10 m-3 sm:m-12  flex flex-col border-2 border-gray-800 justify-center gap-10 sm:gap-10 ">
+        {textElements.map((item) => {
+          return (
+            <div key={item.id} className="   ">
+              <div className="">
+                <div className="flex sm:flex-row  flex-col gap-3 ">
+                  <div className="border-gray-600 text-white   border p-5 flex gap-5 sm:w-1/2 sm:justify-around flex-wrap  justify-center">
+                    {item.buttons.map((button, index) => {
+                      return button.hasInput ? (
+                        button.type === "number" ? (
+                          <TextInput
+                            key={index}
+                            handler={clickHandler}
+                            data={item}
+                            button={button}
+                          />
+                        ) : (
+                          <ColorInput
+                            key={index}
+                            handler={clickHandler}
+                            data={item}
+                            button={button}
+                          />
+                        )
+                      ) : (
+                        <button
+                          key={index}
+                          className="bg-green-600 rounded-md px-3 sm:px-12  py-1 self-center"
+                          onClick={() => clickHandler(button.btnText, item.id)}
+                        >
+                          {button.btnText}
+                        </button>
+                      );
+                    })}
+                  </div>
+
+                  {
+                    <div className="sm:text-2xl border-gray-600 border p-3 sm:w-1/2 text-center text-lg flex justify-center items-center ">
+                      <p
+                        style={{
+                          color: item.color,
+                          fontSize: `${item.fontSize}px`,
+                        }}
+                        className={` ${item.isBold && "font-bold"} ${
+                          item.isItalic && "italic"
+                        } ${item.isUnderlined && "underline"} `}
+                      >
+                        {item.content}
+                      </p>
+                    </div>
+                  }
+                </div>
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
