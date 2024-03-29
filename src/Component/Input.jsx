@@ -14,14 +14,13 @@ export const ColorInput = ({ handler, data, button }) => {
 
       <button
         className="bg-green-600  rounded-md px-3 py-1"
-        onClick={() => {handler(button.btnText, data.id, color)
-             setColor("") } }
-        >
-          
+        onClick={() => {
+          handler(button.btnText, data.id, color);
+          setColor("");
+        }}
+      >
         {button.btnText}
       </button>
-
-
     </div>
   );
 };
@@ -39,8 +38,10 @@ export const TextInput = ({ handler, data, button }) => {
 
       <button
         className="bg-green-600  rounded-md px-3 py-1"
-        onClick={() =>{ handler(button.btnText, data.id, fontSize)
-        setFontSize("")}}
+        onClick={() => {
+          handler(button.btnText, data.id, fontSize);
+          setFontSize("");
+        }}
       >
         {button.btnText}
       </button>
