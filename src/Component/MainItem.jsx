@@ -81,10 +81,16 @@ const MainItem = () => {
       <div className=" p-3 sm:p-10 m-3 sm:m-12  flex flex-col border-2 border-gray-800 justify-center gap-10 sm:gap-10 ">
         {textElements.map((item) => {
           return (
+
+
+
             <div key={item.id} className="   ">
               <div className="">
                 <div className="flex sm:flex-row  flex-col gap-3 ">
                   <div className="border-gray-600 text-white   border p-5 flex gap-5 sm:w-1/2 sm:justify-around flex-wrap  justify-center">
+                    
+                    
+                    
                     {item.buttons.map((button, index) => {
                       return button.hasInput ? (
                         button.type === "number" ? (
